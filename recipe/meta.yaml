@@ -20,6 +20,7 @@ requirements:
     - pkg-config
   host:
     - openssl
+    - zlib
 
 test:
   commands:
