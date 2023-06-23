@@ -18,10 +18,10 @@ requirements:
     - {{ compiler('c') }}
     - cargo-bundle-licenses
     - pkg-config
-    - zlib  # [build_platform != target_platform]
+    - zlib  # [build_platform != target_platform and not (osx and arm64)]
   host:
     - openssl
-    - zlib
+    - zlib  # [not osx]
 
 test:
   commands:
