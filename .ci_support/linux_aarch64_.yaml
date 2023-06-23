@@ -1,9 +1,13 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
 c_compiler:
 - gcc
 c_compiler_version:
 - '12'
+cdt_arch:
+- aarch64
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -15,6 +19,6 @@ openssl:
 rust_compiler:
 - rust
 target_platform:
-- linux-64
+- linux-aarch64
 zlib:
 - '1.2'
