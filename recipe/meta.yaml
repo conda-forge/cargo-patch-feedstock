@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: cargo-patch
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/itmettkeDE/cargo-patch/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d35e87ce3bcee5b964c1794d41a5caa2e47c2ab51fd310d99cffa82eee7ffe51
+  sha256: 41243074b5de18e8df15ee8d4ddd7bc5542b31c5cbbdd631c76aaf6a043169f8
 
 build:
   number: 0
