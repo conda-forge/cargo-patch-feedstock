@@ -43,13 +43,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19615&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cargo-patch-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19615&branchName=main">
@@ -81,14 +74,14 @@ Current release info
 Installing cargo-patch
 ======================
 
-Installing `cargo-patch` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `cargo-patch` from the `conda-forge/label/cargo-patch-dev` channel can be achieved by adding `conda-forge/label/cargo-patch-dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/cargo-patch-dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cargo-patch` can be installed with `conda`:
+Once the `conda-forge/label/cargo-patch-dev` channel has been enabled, `cargo-patch` can be installed with `conda`:
 
 ```
 conda install cargo-patch
@@ -103,26 +96,26 @@ mamba install cargo-patch
 It is possible to list all of the versions of `cargo-patch` available on your platform with `conda`:
 
 ```
-conda search cargo-patch --channel conda-forge
+conda search cargo-patch --channel conda-forge/label/cargo-patch-dev
 ```
 
 or with `mamba`:
 
 ```
-mamba search cargo-patch --channel conda-forge
+mamba search cargo-patch --channel conda-forge/label/cargo-patch-dev
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search cargo-patch --channel conda-forge
+mamba repoquery search cargo-patch --channel conda-forge/label/cargo-patch-dev
 
 # List packages depending on `cargo-patch`:
-mamba repoquery whoneeds cargo-patch --channel conda-forge
+mamba repoquery whoneeds cargo-patch --channel conda-forge/label/cargo-patch-dev
 
 # List dependencies of `cargo-patch`:
-mamba repoquery depends cargo-patch --channel conda-forge
+mamba repoquery depends cargo-patch --channel conda-forge/label/cargo-patch-dev
 ```
 
 
