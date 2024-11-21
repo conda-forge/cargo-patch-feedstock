@@ -1,9 +1,9 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '13'
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -17,4 +17,4 @@ rust_compiler:
 target_platform:
 - linux-ppc64le
 zlib:
-- '1.2'
+- '1'
