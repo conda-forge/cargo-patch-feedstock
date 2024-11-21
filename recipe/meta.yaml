@@ -9,13 +9,14 @@ source:
   sha256: 41243074b5de18e8df15ee8d4ddd7bc5542b31c5cbbdd631c76aaf6a043169f8
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
-    - {{ compiler('rust') }}
+    - {{ compiler('rust') }} 1.79
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - cargo-bundle-licenses
     - pkg-config
     - zlib  # [build_platform != target_platform and not (osx and arm64)]
