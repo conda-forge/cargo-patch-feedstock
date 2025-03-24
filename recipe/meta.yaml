@@ -7,9 +7,12 @@ package:
 source:
   url: https://github.com/itmettkeDE/cargo-patch/archive/f99685ff4f1783a41ab01e21885ad60013586614.zip
   sha256: 2c5ba7495dfbec29e94442b4f41fcd6798a20796d887e6231f323a0239423846
+  patches:
+    # FIXME: Remove once https://github.com/itmettkeDE/cargo-patch/pull/73 is merged
+    - patches/0001-rust-edition-2024.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
