@@ -12,7 +12,7 @@ source:
     - patches/0001-rust-edition-2024.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
