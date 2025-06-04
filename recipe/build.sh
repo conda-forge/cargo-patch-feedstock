@@ -11,4 +11,4 @@ cargo-bundle-licenses \
 
 export OPENSSL_DIR=$PREFIX
 # build statically linked binary with Rust
-cargo install --no-track --locked  --root "$PREFIX" --path .
+cargo auditable install --no-track --locked  --root "$PREFIX" --path .
