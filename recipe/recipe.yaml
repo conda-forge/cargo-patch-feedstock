@@ -1,8 +1,11 @@
-{% set version = "0.4.0.dev20240919" %}
+schema_version: 1
+
+context:
+  version: 0.4.0.dev20240919
 
 package:
   name: cargo-patch
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
   url: https://github.com/itmettkeDE/cargo-patch/archive/f99685ff4f1783a41ab01e21885ad60013586614.zip
@@ -12,35 +15,36 @@ source:
     - patches/0001-rust-edition-2024.patch
 
 build:
-  number: 2
-  skip: true  # [win]
+  number: 3
+  skip: win
 
 requirements:
   build:
-    - {{ compiler('rust') }}
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
     - cargo-bundle-licenses
+    - cargo-auditable
     - pkg-config
-    - zlib  # [build_platform != target_platform and not (osx and arm64)]
+    - if: build_platform != target_platform and not (osx and arm64)
+      then: zlib
   host:
     - openssl
-    - zlib  # [not osx]
+    - if: not osx
+      then: zlib
 
-test:
-  commands:
-    # The command doesn't have a help command.
-    - test -f $PREFIX/bin/cargo-patch
+tests:
+  - script:
+      - test -f $PREFIX/bin/cargo-patch
 
 about:
-  home: https://github.com/itmettkeDE/cargo-patch
   license: MIT
-  license_family: MIT
   license_file:
     - LICENSE
     - THIRDPARTY.yml
   summary: Cargo Subcommand which allows patching dependencies using patch files.
-  dev_url: https://github.com/itmettkeDE/cargo-patch
+  homepage: https://github.com/itmettkeDE/cargo-patch
+  repository: https://github.com/itmettkeDE/cargo-patch
 
 extra:
   recipe-maintainers:
