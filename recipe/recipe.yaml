@@ -17,7 +17,7 @@ build:
 
 requirements:
   build:
-    - ${{ compiler('rust') }} 1.79
+    - ${{ compiler('rust') }} 1.79.*
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - cargo-auditable
